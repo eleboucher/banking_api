@@ -69,7 +69,5 @@ def test_email_unique(user_factory):
 @pytest.mark.django_db
 def test_invalid_email_format(user_factory):
     with pytest.raises(ValidationError):
-        user = user_factory(
-            username="testuser", email="invalid-email", phone_number="+1234567890"
-        )
+        user = user_factory(email="invalid-email", phone_number="+1234567890")
         user.full_clean()

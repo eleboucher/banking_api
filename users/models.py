@@ -3,6 +3,7 @@ from django.db import models
 
 
 class User(AbstractUser):
+    username = None
     email = models.EmailField(unique=True, null=False, blank=False)
     phone_number = models.CharField(max_length=15, null=False, blank=False, unique=True)
     date_of_birth = models.DateField(null=True)

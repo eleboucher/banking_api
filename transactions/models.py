@@ -31,4 +31,4 @@ class Transaction(models.Model):
     ref = models.TextField(blank=True)
 
     def __str__(self):
-        return self.transaction_id
+        return self.transaction_id.__str__()
